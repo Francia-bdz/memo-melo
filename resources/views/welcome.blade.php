@@ -40,7 +40,7 @@
                 @auth
                     <button
                         class="bg-green rounded-full border border-black transition shadow-button hover:bg-greenHover hover:shadow-buttonHover p-1">
-                        <a href="{{ url('/dashboard') }}"
+                        <a href="{{ url('/songs') }}"
                             class="font-inter px-3 py-2 text-beige transition focus:outline-none">
                             ACCÉDER AU RÉPERTOIRE
                         </a>
