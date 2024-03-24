@@ -17,7 +17,16 @@ class SongFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            
+                'title' => $this->faker->words(3, true),
+                'artist'=> $this->faker->name(),
+                'chordsKnowledge'=> $this->faker->numberBetween(0,5),
+                'rythmKnowledge'=> $this->faker->numberBetween(0,5),
+                'globalKnowledge'=> $this->faker->numberBetween(0,5),
+                'tabs'=> $this->faker->url(),
+                'link'=> $this->faker->url(),
+                'user_id'=> 1,
+
         ];
     }
 }

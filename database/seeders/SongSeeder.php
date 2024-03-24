@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Song;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SongSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class SongSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Song::factory(10)->create();
     }
 }
