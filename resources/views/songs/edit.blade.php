@@ -1,6 +1,9 @@
 <x-app-layout>
 
-    <h1 class="text-5xl font-normal leading-normal text-center ">{{ $song->title }}</h1>
+    <h1 class="text-6xl font-black text-beige text-center mt-10">MA MÉLODIE</h1>
+    <h3 class="text-lg text-beige text-center mt-2">Je veux que ma mélodie fasse le tour du monde</h3>
+
+    <div class="bg-beige m-8 p-12 rounded-xl border border-black">
 
     <form method="POST" action="{{ route('songs.update', $song) }}" enctype="multipart/form-data">
 
@@ -64,12 +67,16 @@
         <input type="submit" name="valider" value="Valider"
             class=" bg-green rounded-full border border-black transition shadow-button hover:bg-greenHover hover:shadow-buttonHover p-1">
 
-
     </form>
+
+</div>
+
 
     <form method="POST" action="{{ route('songs.destroy', $song) }}">
         @csrf
         @method('DELETE')
-        <input type="submit" value="Supprimer">
+        <input class="'inline-flex items-center px-4 py-2 font-semibold text-sm text-beige uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 bg-red-600 rounded-full border border-black shadow-button hover:bg-red-800 hover:shadow-buttonHover transition ease-in-out duration-150" type="submit" value="Supprimer">
     </form>
+
+
 </x-app-layout>

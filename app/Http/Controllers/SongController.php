@@ -11,7 +11,6 @@ use App\Http\Requests\StoreSongRequest;
 
 class SongController extends Controller
 {
-    
 
     public function index(User $user)
     {
@@ -62,7 +61,7 @@ class SongController extends Controller
 
         $song->update($request->all());
 
-        return redirect()->route('songs.index')
+        return redirect()->route('songs.show', compact('song'))
             ->with('success', 'Mélodie mise à jour avec succès');
     }
 

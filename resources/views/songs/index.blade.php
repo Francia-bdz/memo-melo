@@ -19,7 +19,7 @@
     @foreach ($mySongs as $song)
     <a href="{{ route('songs.show', $song) }}" title="Voir les informations">
         <div class="bg-beige w-80 h-52 rounded-3xl border border-black p-10">
-            <h4 class="font-inter text-xl text-green uppercase font-semibold">{{ $song->title }}</h4>
+            <h4 class="font-inter text-xl text-green uppercase font-semibold truncate ">{{ $song->title }}</h4>
             <h5 class="font-inter text-lg text-green/60">{{ $song->title }}</h4>
             <hr class="border-1 border-black/10 my-3">
             <p class="font-inter font-semibold text-lg text-green">Niveau de connaissance</p>

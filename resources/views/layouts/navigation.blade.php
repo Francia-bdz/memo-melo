@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ url('/songs') }}" class="font-alinsa text-green text-2xl ml-6">
+                    <a href="{{ url('/songs') }}" class="font-alinsa text-green text-2xl ml-6 ">
                                         
                     MÉMO-MÉLO
                     </a>
