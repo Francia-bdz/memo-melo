@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        Song::factory(10)->create();
+        Song::factory(80)->create();
 
 
         User::factory()->create([

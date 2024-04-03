@@ -23,7 +23,7 @@
 
                     <div>
                         <x-input-label for="artist" :value="__('Artiste(s)')" />
-                        <x-text-input id="artist" class="block mt-1 min-w-96" type="text" name="artist" required
+                        <x-text-input id="artist" class="block mt-1 md:min-w-96" type="text" name="artist" required
                             autofocus />
                         <x-input-error :messages="$errors->get('artist')" class="mt-2" />
                     </div>
@@ -49,8 +49,9 @@
 
             <div class="flex mt-8 justify-between">
 
- 
-                <div x-data="{ chordsKnowledge: 0 }" id="chordsKnowledge" class="flex gap-1 ">
+
+                <div x-data="{ chordsKnowledge: 0 }" id="chordsKnowledge" class="flex gap-1">
+                    
                     <x-input-label for="chordsKnowledge" :value="__('Accords')" class="mr-3" />
                     @foreach (range(1, 5) as $index)
                     <svg @click="chordsKnowledge = (chordsKnowledge === 1 && {{ $index }} === 1) ? 0 : {{ $index }}"
@@ -65,8 +66,8 @@
                                 fill="#F79C99" />
                             </svg>
                     @endforeach
-                    <p class="italic text-black/60 ml-2" x-text="(chordsKnowledge === 0 ? 'Inconnu' : (chordsKnowledge === 1 ? 'Débutant' : (chordsKnowledge === 2 ? 'Intermédiaire' : (chordsKnowledge === 3 ? 'Avancé' : (chordsKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))"></p>
                     <input type="hidden" name="chordsKnowledge" x-model="chordsKnowledge">
+                    <p class="italic text-black/60 ml-2" x-text="(chordsKnowledge === 0 ? 'Inconnu' : (chordsKnowledge === 1 ? 'Débutant' : (chordsKnowledge === 2 ? 'Intermédiaire' : (chordsKnowledge === 3 ? 'Avancé' : (chordsKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))"></p>
                 </div>
 
 
