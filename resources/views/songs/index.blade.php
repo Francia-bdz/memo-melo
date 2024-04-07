@@ -17,6 +17,16 @@
 
     <div class="flex flex-col">
         <div class="flex flex-wrap gap-10 mx-4 my-4 justify-center lg:justify-normal	 ">
+            @if (count($mySongs) == 0)
+                <div class="flex flex-col items-center m-auto">
+                    <p class="text-center text-beige font-bold mt-4 text-2xl	">
+                        Vous n'avez pas encore de chansons dans votre répertoire.
+                    </p>
+                    <button class="max-w-fit mt-3 px-4 py-2 border border-black text-lg leading-4 font-medium rounded-full text-green bg-beige focus:outline-none transition ease-in-out duration-150">
+                        <a href="{{ url('/songs/create') }}" > Ajouter des titres </a>
+                    </button>
+                </div>
+            @endif
             @foreach ($mySongs as $song)
                 <a href="{{ route('songs.show', $song) }}" title="Voir les informations">
                     <div class="bg-beige w-80 h-52 rounded-3xl border border-black p-10">
