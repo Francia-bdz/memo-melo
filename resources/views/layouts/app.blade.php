@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="/path/to/alpine.js" defer></script>
+
     </head>
     <body class="font-sans antialiased bg-green">
         <div class="min-h-screen">
