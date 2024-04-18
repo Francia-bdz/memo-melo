@@ -14,8 +14,9 @@ class SongController extends Controller
 
     public function index(User $user)
     {
-        
-        $mySongs = Song::where('user_id', Auth::user()->id)->paginate(8);
+        $mySongs = Song::where('user_id', Auth::user()->id)
+        ->orderBy('created_at', 'desc')
+        ->paginate(8);
         
         return view('songs.index', compact('mySongs'));
     }
