@@ -15,34 +15,38 @@ class SongController extends Controller
     public function index(User $user)
     {
         $mySongs = Song::where('user_id', Auth::user()->id)
-        ->orderBy('created_at', 'desc')
-        ->paginate(8);
-        
+            ->orderBy('created_at', 'desc')
+            ->paginate(8);
+
         return view('songs.index', compact('mySongs'));
     }
 
 
     public function create()
-    {  
+    {
         return view('songs.create');
     }
 
-    public function store(StoreSongRequest $request, Song $song) 
+    public function store(StoreSongRequest $request, Song $song)
     {
+        if (auth()->user()->email === 'demo@example.com') {
+            return redirect()->route('songs.index')
+                ->with('error', 'Créez vous un compte pour ajouter une mélodie');
+        } else {
+            Song::create([
+                'title' => $request->input('title'),
+                'artist' => $request->input('artist'),
+                'chordsKnowledge' => $request->input('chordsKnowledge'),
+                'rythmKnowledge' => $request->input('rythmKnowledge'),
+                'globalKnowledge' => $request->input('globalKnowledge'),
+                'tabs' => $request->input('tabs'),
+                'link' => $request->input('link'),
+                'user_id' => auth()->user()->id,
+            ]);
 
-        Song::create([
-            'title' => $request->input('title'),
-            'artist' => $request->input('artist'), 
-            'chordsKnowledge' => $request->input('chordsKnowledge'), 
-            'rythmKnowledge' => $request->input('rythmKnowledge'), 
-            'globalKnowledge' => $request->input('globalKnowledge'), 
-            'tabs' => $request->input('tabs'), 
-            'link' => $request->input('link'), 
-            'user_id' => auth()->user()->id,
-        ] );
-
-        return redirect()->route('songs.index')
-            ->with('success', 'Mélodie ajoutée avec succès');
+            return redirect()->route('songs.index')
+                ->with('success', 'Mélodie ajoutée avec succès');
+        }
     }
 
     public function show(Song $song)
@@ -60,19 +64,30 @@ class SongController extends Controller
     public function update(StoreSongRequest $request, Song $song)
     {
 
-        $song->update($request->all());
+        if (auth()->user()->email === 'demo@example.com') {
+            return redirect()->route('songs.index')
+                ->with('error', 'Créez vous un compte pour modifier une mélodie');
+        } else {
 
-        return redirect()->route('songs.show', compact('song'))
-            ->with('success', 'Mélodie mise à jour avec succès');
+            $song->update($request->all());
+
+            return redirect()->route('songs.show', compact('song'))
+                ->with('success', 'Mélodie mise à jour avec succès');
+        }
     }
 
     public function destroy(Song $song)
     {
-        $song->delete();
 
-        return redirect()->route('songs.index')
-            ->with('success', 'Mélodie supprimée avec succès');
+        if (auth()->user()->email === 'demo@example.com') {
+            return redirect()->route('songs.index')
+                ->with('error', 'Créez vous un compte pour supprimer une mélodie');
+        } else {
+
+            $song->delete();
+
+            return redirect()->route('songs.index')
+                ->with('success', 'Mélodie supprimée avec succès');
+        }
     }
-    
-
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('globalKnowledge');
             $table->text('tabs');
             $table->text('link');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
