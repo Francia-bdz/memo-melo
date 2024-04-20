@@ -25,8 +25,6 @@ class SongFactory extends Factory
                 'globalKnowledge'=> $this->faker->numberBetween(0,5),
                 'tabs'=> $this->faker->url(),
                 'link'=> $this->faker->url(),
-                'user_id'=> 1,
-
         ];
     }
 }

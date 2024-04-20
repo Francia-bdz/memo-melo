@@ -30,18 +30,33 @@
                 <img src="{{ asset('assets/images/memo-melo.svg') }}" class="max-w-xs mr-10">
             </div>
             <div class="flex mt-10 gap-10	">
-                <button
-                    class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1">
-                    <a href="{{ route('login') }}" class="font-inter px-3 py-2 text-black focus:outline-none">
-                        VOIR LA DÉMO
-                    </a>
-                </button>
+                @auth
+        
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1">
+                            <span class="font-inter px-3 py-2 text-black focus:outline-none">
+                                SE DÉCONNECTER
+                            </span>
+                        </button>
+                    </form>
+
+                @else
+                    <form action="{{ route('demo-login') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1">
+                            <span class="font-inter px-3 py-2 text-black focus:outline-none">
+                                VOIR LA DÉMO
+                            </span>
+                        </button>
+                    </form>
+
+                @endauth
 
                 @auth
                     <button
                         class="bg-green rounded-full border border-black transition shadow-button hover:bg-greenHover hover:shadow-buttonHover p-1">
-                        <a href="{{ url('/songs') }}"
-                            class="font-inter px-3 py-2 text-beige transition focus:outline-none">
+                        <a href="{{ url('/songs') }}" class="font-inter px-3 py-2 text-beige transition focus:outline-none">
                             ACCÉDER AU RÉPERTOIRE
                         </a>
                     </button>
