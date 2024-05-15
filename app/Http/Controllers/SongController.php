@@ -24,7 +24,21 @@ class SongController extends Controller
 
     public function create()
     {
-        return view('songs.create');
+        
+        $instruments = [
+            'Guitare',
+            'Basse',
+            'Batterie',
+            'Piano',
+            'Violon',
+            'Saxophone',
+            'Trompette',
+            'Flûte',
+            'Harpe',
+            'Ukulélé',
+            'Autre',
+        ];
+        return view('songs.create' , compact('instruments'));
     }
 
     public function store(StoreSongRequest $request, Song $song)
@@ -39,8 +53,8 @@ class SongController extends Controller
                 'chordsKnowledge' => $request->input('chordsKnowledge'),
                 'rythmKnowledge' => $request->input('rythmKnowledge'),
                 'globalKnowledge' => $request->input('globalKnowledge'),
-                'tabs' => $request->input('tabs'),
-                'link' => $request->input('link'),
+                'tabs' => $request->input('tabs') ? $request->input('tabs') : null,
+                'link' => $request->input('link') ? $request->input('link') : null,
                 'user_id' => auth()->user()->id,
             ]);
 
@@ -59,7 +73,7 @@ class SongController extends Controller
     public function edit(Song $song)
     {
         return view('songs.edit', compact('song'));
-    }
+    } 
 
     public function update(StoreSongRequest $request, Song $song)
     {
