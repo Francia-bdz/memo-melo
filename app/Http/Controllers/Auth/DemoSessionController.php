@@ -26,6 +26,7 @@ class DemoSessionController extends Controller
             Song::create([
                 'title' => 'KNOCKING ON THE HEAVEN’S DOOR',
                 'artist' => 'Bob Dylan',
+                'instrument' => 'Guitare',
                 'chordsKnowledge' => 4,
                 'rythmKnowledge' => 3,
                 'globalKnowledge' => 4,

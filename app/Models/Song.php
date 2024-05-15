@@ -23,6 +23,7 @@ class Song extends Model
     protected $fillable = [
         'title',
         'artist',
+        'instrument',
         'chordsKnowledge',
         'rythmKnowledge',
         'globalKnowledge',

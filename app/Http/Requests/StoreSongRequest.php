@@ -24,11 +24,12 @@ class StoreSongRequest extends FormRequest
         return [
             'title' => 'required',
             'artist' => 'required',
+            'instrument' => 'required',
             'chordsKnowledge' => 'required',
             'rythmKnowledge' => 'required',
             'globalKnowledge' => 'required',
-            'tabs'=> '',
-            'link'=> '',
+            'tabs'=> 'nullable',
+            'link'=> 'nullable',
         ];
     }
 }

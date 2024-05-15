@@ -45,10 +45,22 @@
                 </div>
             </div>
 
+            <div>
+                <x-input-label for="instrument" :value="__('Instrument')" />
+                <select id="instrument" name="instrument" class="block mt-1 min-w-96" required>
+                    <option value="" disabled selected>{{ __('Select an instrument') }}</option>
+                    @foreach ($instruments as $instrument)
+                        <option value="{{ $instrument }}">{{ $instrument }}</option>
+                    @endforeach
+                </select>
+                <x-input-error :messages="$errors->get('instrument')" class="mt-2" />
+            </div>
+            
             <p class="font-inter font-bold text-lg text-green my-2">NIVEAU DE CONNAISSANCE</p>
 
             <div class="flex mt-8 justify-between">
 
+                
 
                 <div x-data="{ chordsKnowledge: 0 }" id="chordsKnowledge" class="flex gap-1">
                     

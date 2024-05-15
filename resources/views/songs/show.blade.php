@@ -42,10 +42,12 @@
                             </svg>
                         @endif
                     @endfor
-                    <p class="italic text-black/60 ml-2" x-text="(chordsKnowledge === 0 ? 'Inconnu' : (chordsKnowledge === 1 ? 'Débutant' : (chordsKnowledge === 2 ? 'Intermédiaire' : (chordsKnowledge === 3 ? 'Avancé' : (chordsKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))"></p>
+                    <p class="italic text-black/60 ml-2"
+                        x-text="(chordsKnowledge === 0 ? 'Inconnu' : (chordsKnowledge === 1 ? 'Débutant' : (chordsKnowledge === 2 ? 'Intermédiaire' : (chordsKnowledge === 3 ? 'Avancé' : (chordsKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))">
+                    </p>
                 </div>
             </div>
-            
+
             <div class="flex items-center">
                 <p class="font-inter font-medium text-lg text-black mr-3 ">Rythme</p>
                 <div class="flex gap-1" x-data="{ rythmKnowledge: {{ $song->rythmKnowledge }} }">
@@ -64,7 +66,9 @@
                             </svg>
                         @endif
                     @endfor
-                    <p class="italic text-black/60 ml-2" x-text="(rythmKnowledge === 0 ? 'Inconnu' : (rythmKnowledge === 1 ? 'Débutant' : (rythmKnowledge === 2 ? 'Intermédiaire' : (rythmKnowledge === 3 ? 'Avancé' : (rythmKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))"></p>
+                    <p class="italic text-black/60 ml-2"
+                        x-text="(rythmKnowledge === 0 ? 'Inconnu' : (rythmKnowledge === 1 ? 'Débutant' : (rythmKnowledge === 2 ? 'Intermédiaire' : (rythmKnowledge === 3 ? 'Avancé' : (rythmKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))">
+                    </p>
                 </div>
             </div>
 
@@ -86,31 +90,42 @@
                             </svg>
                         @endif
                     @endfor
-                    <p class="italic text-black/60 ml-2" x-text="(globalKnowledge === 0 ? 'Inconnu' : (globalKnowledge === 1 ? 'Débutant' : (globalKnowledge === 2 ? 'Intermédiaire' : (globalKnowledge === 3 ? 'Avancé' : (globalKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))"></p>
+                    <p class="italic text-black/60 ml-2"
+                        x-text="(globalKnowledge === 0 ? 'Inconnu' : (globalKnowledge === 1 ? 'Débutant' : (globalKnowledge === 2 ? 'Intermédiaire' : (globalKnowledge === 3 ? 'Avancé' : (globalKnowledge === 4 ? 'Presque maîtrisé' : 'Maîtrisé')))))">
+                    </p>
                 </div>
             </div>
 
-            
+
 
         </div>
-        
+
+
+
         <div class="flex flex-col gap-4">
-            <button
-            class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1 max-w-fit">
-            <a href="{{ $song->link }} "
-                class="font-inter font-medium px-3 py-2 text-black focus:outline-none uppercase" target="_blank">
-                ÉCOUTER LA MUSIQUE
-            </a>
-        </button>
-        
-        <button
-        class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1 max-w-fit">
-        <a href="{{ $song->tabs }}"
-            class="font-inter font-medium px-3 py-2 text-black focus:outline-none uppercase" target="_blank">
-            Revoir la tablature/partition
-        </a>
-    </button>
-</div>
+
+            @if ($song->link)
+                <button
+                    class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1 max-w-fit">
+                    <a href="{{ $song->link }}"
+                        class="font-inter font-medium px-3 py-2 text-black focus:outline-none uppercase"
+                        target="_blank">
+                        ÉCOUTER LA MUSIQUE
+                    </a>
+                </button>
+            @endif
+            
+            @if ($song->tabs)
+                <button
+                class="bg-pink rounded-full border border-black transition shadow-button hover:bg-pinkHover hover:shadow-buttonHover p-1 max-w-fit">
+                <a href="{{ $song->tabs }}"
+                    class="font-inter font-medium px-3 py-2 text-black focus:outline-none uppercase"
+                    target="_blank">
+                    Revoir la tablature/partition
+                </a>
+            </button>
+            @endif
+        </div>
     </div>
 
 

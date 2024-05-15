@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('artist');
+            $table->enum('instrument', ['guitar', 'piano', 'ukulele', 'bass', 'drums', 'voice', 'other']);
+            
             $table->integer('chordsKnowledge');
             $table->integer('rythmKnowledge');
             $table->integer('globalKnowledge');
-            $table->text('tabs');
-            $table->text('link');
+            $table->text('tabs')->nullable();
+            $table->text('link')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
