@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: 'Alinsa';
+    src: url("/public/assets/fonts/Alinsa.ttf");
+};
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+$beige: #FFEFDE;
+$pink: #F79C99;
+$pinkHover: #E3908D;
+$green: #0F790F;
+$greenHover: #0C610C;
+
+h1 {
+    text-shadow: -2px 2px 0 #000,
+        2px 2px 0 #000,
+        2px -2px 0 #000,
+        -2px -2px 0 #000;
+    font-family: 'Alinsa', sans-serif;
+}
+
+.bg-beige {
+    background-color: $beige;
+}
+
+body {
+    background-color: $beige; /* beige */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: $beige; /* beige */
+
+    .card {
+        display: flex;
+        background-color: $green; /* green */
+        
+        border-radius: 8px;
+        border: 2px solid #000;
+        width: 82%;
+        height: 565px;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            justify-content: center;
+        }
+        
+    }
+}
+
+
+
+
+
+h1 {
+    font-size: 150px; /* Default size */
+    color: $beige; /* beige */
+    margin: 0;
+    text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+}
+
+h2 {
+    color: $beige; /* beige */
+    font-size: 30px;
+    font-style: normal; 
+    font-weight: 500;
+    margin: 0;
+}
+
+.image {
+    margin-right: 40px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.button {
+    border-radius: 9999px;
+    border: 1px solid #000;
+    padding: 8px 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.button-pink {
+    background-color: $pink; 
+    color: black;
+}
+
+.button:hover {
+    background-color: $pinkHover; /* pink hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-green {
+    background-color: $green; /* green */
+    color: $beige; /* beige */
+}
+
+.button-green:hover {
+    background-color: $greenHover; /* green hover */
+}
