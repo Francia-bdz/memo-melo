@@ -18,6 +18,7 @@ h1 {
         2px -2px 0 #000,
         -2px -2px 0 #000;
     font-family: 'Alinsa', sans-serif;
+    line-height: 100%;
 }
 
 .bg-beige {
@@ -41,7 +42,7 @@ body {
     .card {
         display: flex;
         background-color: $green; /* green */
-        
+        justify-content: space-between;
         border-radius: 8px;
         border: 2px solid #000;
         width: 82%;
@@ -51,6 +52,7 @@ body {
             display: flex;
             flex-direction: column;
             margin-right: 20px;
+            margin-left: 7%;
             justify-content: center;
         }
         
@@ -59,14 +61,17 @@ body {
 
 
 
-
-
 h1 {
-    font-size: 150px; /* Default size */
-    color: $beige; /* beige */
+    font-size: 150px; 
+    color: $beige; 
     margin: 0;
     text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+
+
+
 }
+
+
 
 h2 {
     color: $beige; /* beige */
@@ -89,10 +94,12 @@ h2 {
 .button {
     border-radius: 9999px;
     border: 1px solid #000;
+    box-shadow: 4px 4px 0px 0px #1E1E1E;
     padding: 8px 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     transition: all 0.3s;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .button-pink {
@@ -100,9 +107,8 @@ h2 {
     color: black;
 }
 
-.button:hover {
+.button-pink:hover {
     background-color: $pinkHover; /* pink hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .button-green {
@@ -112,4 +118,38 @@ h2 {
 
 .button-green:hover {
     background-color: $greenHover; /* green hover */
+}
+
+@media (max-width: 767px) {
+    .container {
+        min-height: auto;
+        
+        .card{
+            height: auto;
+            flex-direction: column;
+            margin-top: 10%;
+            .content{
+                order: 1;
+                margin-top: 15%;
+                margin-bottom: 5%;
+            }
+            img{
+                width: 190px;
+                order: 0;
+                align-self: center;
+                margin-left: 10%;
+                margin-top: 10%;
+            }
+        }
+    }
+    h1 {
+        font-size: 70px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
 }

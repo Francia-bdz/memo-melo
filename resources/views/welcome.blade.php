@@ -34,9 +34,9 @@
             @endauth
 
             @auth
-            <a href="{{ url('/songs') }}" class="button button-green">ACCÉDER AU RÉPERTOIRE</a>
+            <a href="{{ url('/songs') }}"><button class="button button-green">ACCÉDER AU RÉPERTOIRE</button></a>
             @else
-            <a href="{{ route('login') }}" class="button button-green">SE CONNECTER</a>
+            <a href="{{ route('login') }}" ><button class="button button-green"> SE CONNECTER</button></a>
             @endauth
         </div>
     </div>
