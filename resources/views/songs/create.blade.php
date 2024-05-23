@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <h1 class="text-6xl font-black text-beige text-center mt-10">AJOUTER UN TITRE</h1>
+    <h1 >AJOUTER UN TITRE</h1>
     <h3 class="text-lg text-beige text-center mt-2">Une nouvelle corde à ma guitare ...</h3>
 
     <div class="bg-beige m-8 p-12 rounded-xl border border-black">

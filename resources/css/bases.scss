@@ -5,8 +5,13 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
 .bg-beige {
     background-color: $beige;
+}
+
+.bg-green {
+    background-color: $green;
 }
 
 .text-gray {
@@ -27,14 +32,34 @@ a {
     }
   }
 
+  h1{
+    color: $beige; 
+    font-family: "Inter", sans-serif;
+    font-size: 3.75rem;
+    font-weight: 900; 
+    margin: 2.5rem 0 0.5rem;
+    text-align: center;
+}
+
 h2 {
     color: $green;
     font-weight: 900;
     font-family: "Inter", sans-serif;
     margin-bottom: 1rem;
     font-size: 24px;
-
 }
+
+h3 {
+    font-size: 1.125rem; 
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: $beige; 
+    margin: 0;
+    text-align: center; 
+}
+
+
+
 
 p {            
     font-size: 1.125rem;
