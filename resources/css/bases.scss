@@ -1,0 +1,43 @@
+ /* Bases */
+
+body {
+    background-color: $beige;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.bg-beige {
+    background-color: $beige;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+a {
+    text-decoration: underline; 
+    text-underline-offset: 2px; 
+    color: $green; 
+    transition: color 150ms ease-in-out;
+    font-size: 1.125rem;
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
+
+    &:hover {
+      color: $greenHover; 
+    }
+  }
+
+h2 {
+    color: $green;
+    font-weight: 900;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 1rem;
+    font-size: 24px;
+
+}
+
+p {            
+    font-size: 1.125rem;
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
+}

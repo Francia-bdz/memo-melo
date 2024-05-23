@@ -1,155 +1,157 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'bases.scss';
+@import 'components.scss';
 
-@font-face {
-    font-family: 'Alinsa';
-    src: url("/public/assets/fonts/Alinsa.ttf");
-};
+ /* Homepage */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+.homepage{
 
-$beige: #FFEFDE;
-$pink: #F79C99;
-$pinkHover: #E3908D;
-$green: #0F790F;
-$greenHover: #0C610C;
-
-h1 {
-    text-shadow: -2px 2px 0 #000,
-        2px 2px 0 #000,
-        2px -2px 0 #000,
-        -2px -2px 0 #000;
-    font-family: 'Alinsa', sans-serif;
-    line-height: 100%;
-}
-
-.bg-beige {
-    background-color: $beige;
-}
-
-body {
-    background-color: $beige; /* beige */
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
-    background-color: $beige; /* beige */
-
-    .card {
-        display: flex;
-        background-color: $green; /* green */
-        justify-content: space-between;
-        border-radius: 8px;
-        border: 2px solid #000;
-        width: 82%;
-        height: 565px;
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            margin-right: 20px;
-            margin-left: 7%;
-            justify-content: center;
-        }
-        
+    h1 {
+        text-shadow: -2px 2px 0 $black,
+            2px 2px 0 $black,
+            2px -2px 0 $black,
+            -2px -2px 0 $black;
+        font-family: 'Alinsa', sans-serif;
+        line-height: 100%;
+        font-size: 150px; 
+        color: $beige; 
+        margin: 0;
     }
-}
 
+    h2 {
+        color: $beige; /* beige */
+        font-size: 30px;
+        font-style: normal; 
+        font-weight: 500;
+        margin: 0;
+    }
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        justify-content: center;
+        background-color: $beige; /* beige */
 
-h1 {
-    font-size: 150px; 
-    color: $beige; 
-    margin: 0;
-    text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+        .card {
+            display: flex;
+            background-color: $green; /* green */
+            justify-content: space-between;
+            border-radius: 8px;
+            border: 2px solid $black;
+            width: 82%;
+            height: 565px;
 
+            .content {
+                display: flex;
+                flex-direction: column;
+                margin-right: 20px;
+                margin-left: 7%;
+                justify-content: center;
+            }
 
+            .image {
+                margin-right: 40px;
+            }
+            
+        }
 
-}
+        .buttons {
+            display: flex;
+            margin-top: 40px;
+            gap: 40px;
+        }
 
-
-
-h2 {
-    color: $beige; /* beige */
-    font-size: 30px;
-    font-style: normal; 
-    font-weight: 500;
-    margin: 0;
-}
-
-.image {
-    margin-right: 40px;
-}
-
-.buttons {
-    display: flex;
-    margin-top: 40px;
-    gap: 40px;
-}
-
-.button {
-    border-radius: 9999px;
-    border: 1px solid #000;
-    box-shadow: 4px 4px 0px 0px #1E1E1E;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.button-pink {
-    background-color: $pink; 
-    color: black;
-}
-
-.button-pink:hover {
-    background-color: $pinkHover; /* pink hover */
-}
-
-.button-green {
-    background-color: $green; /* green */
-    color: $beige; /* beige */
-}
-
-.button-green:hover {
-    background-color: $greenHover; /* green hover */
+    }
 }
 
 @media (max-width: 767px) {
-    .container {
-        min-height: auto;
-        
-        .card{
-            height: auto;
-            flex-direction: column;
-            margin-top: 10%;
-            .content{
-                order: 1;
-                margin-top: 15%;
-                margin-bottom: 5%;
-            }
-            img{
-                width: 190px;
-                order: 0;
-                align-self: center;
-                margin-left: 10%;
+    .homepage {
+        .container {
+            min-height: auto;
+            
+            .card{
+                height: auto;
+                flex-direction: column;
                 margin-top: 10%;
+                .content{
+                    order: 1;
+                    margin-top: 15%;
+                    margin-bottom: 5%;
+                }
+                img{
+                    width: 190px;
+                    order: 0;
+                    align-self: center;
+                    margin-left: 10%;
+                    margin-top: 10%;
+                }
             }
         }
-    }
-    h1 {
-        font-size: 70px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    .button {
-        font-size: 13px;
-        padding: 6px 10px;
+        h1 {
+            font-size: 70px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        .button {
+            font-size: 13px;
+            padding: 6px 10px;
+        }
     }
 }
+ /* Auth page */
+.guest-blade{
+
+display: flex;
+justify-content: center;
+margin-top: 10%;
+gap:5%;
+
+img {
+    max-width: 320px;
+}
+    .authPage {
+        width: 400px;
+    
+        .forget-link{
+            margin-top:3%;
+        }
+
+        .redirection-link{
+            display:flex;
+            align-items: center;
+            gap: 1%;
+        }
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .guest-blade {
+        flex-direction: column;
+        gap: 10%;
+        align-items: center;
+        margin-top: 0;
+        .container{
+            order: 1;
+            margin-top: 4%;
+        }      
+
+        button {
+            justify-self: center;
+        }
+
+        img {
+            max-width: 140px;
+            margin-top: 7%;
+            order: 0;
+        }
+        .authPage {
+            width: 300px;
+        }
+    }
+}
+ 

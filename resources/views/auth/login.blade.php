@@ -1,58 +1,59 @@
 <x-guest-layout>
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+    <div class="authPage">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-        <h2 class="font-black font-inter text-green text-2xl mb-4">SE CONNECTER</h2>
-        
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full bg-beige border focus:border-green" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <h2>SE CONNECTER</h2>
 
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Mot de passe')" />
+            <div>
+                <x-input-label for="email" :value="__('Email')" />
+                <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus
+                    autocomplete="username" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <div class="mt-4">
+                <x-input-label for="password" :value="__('Mot de passe')" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="current-password" />
 
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="bg-white/[0.5] rounded border-black text-green focus:ring-green" name="remember">
-                <span class="ms-2 text-gray-800">{{ __('Se souvenir de moi') }}</span>
-            </label>
-        </div>
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            </div>
 
+            <div class="">
+                <label for="remember_me">
+                    <input id="remember_me" type="checkbox" class="" name="remember">
+                    <span>{{ __('Se souvenir de moi') }}</span>
+                </label>
+            </div>
 
 
-        <div class="flex items-center my-4">
-            @if (Route::has('password.request'))
-                <a class="underline underline-offset-2 text-green hover:text-greenHover transition ease-in-out duration-150 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green" href="{{ route('password.request') }}">
-                    {{ __('Mot de passe oublié ?') }}
-                </a>
-            @endif
 
-        </div>
+            <div class="forget-link">
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}">
+                        {{ __('Mot de passe oublié ?') }}
+                    </a>
+                @endif
 
-        <div class="flex items-center mt-4">
-            @if (Route::has('register'))
-                <p class="mr-1">Pas encore inscrit ?</p>
-                <a class="underline underline-offset-2 text-green hover:text-greenHover transition ease-in-out duration-150 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green" href="{{ route('register') }}">
-                    {{ __('S’inscrire') }}
-                </a>
-            @endif
+            </div>
 
-        </div>
+            <div class="redirection-link">
+                @if (Route::has('register'))
+                    <p class="">Pas encore inscrit ?</p>
+                    <a href="{{ route('register') }}">
+                        {{ __('S’inscrire') }}
+                    </a>
+                @endif
 
-        <x-primary-button class="mt-4">
-            {{ __('Valider') }}
-        </x-primary-button>
-    </form>
+            </div>
+
+            <x-primary-button>
+                {{ __('VALIDER') }}
+            </x-primary-button>
+        </form>
+    </div>
 </x-guest-layout>
