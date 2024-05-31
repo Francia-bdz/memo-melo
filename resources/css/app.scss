@@ -155,3 +155,44 @@ img {
     }
 }
  
+/* Index music */
+
+.list-music {
+
+    .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 5%;
+
+        a {
+            text-decoration: none;
+        
+            .music-card{
+                background-color: $beige;
+                border: 1px solid $black;
+                width: 15rem;
+                border-radius: 20px;
+                padding: 40px;
+
+                hr{
+                    border-width: 0.5px;
+                    border-color: rgba(0, 0, 0, 0.3);
+                    margin: 0.75rem 0;
+                    margin-right: 60%;
+                }
+                
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .list-music {
+        flex-direction: column;
+        gap: 10%;
+        justify-content: center;
+        align-items: center;
+    }
+}

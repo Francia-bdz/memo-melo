@@ -14,6 +14,14 @@ body {
     background-color: $green;
 }
 
+.fill-pink {
+    fill: #F79C99;
+}
+
+.fill-black\/25 {
+    fill: rgb(0 0 0 / 0.25);
+}
+
 .text-gray {
     color: $gray;
 }
@@ -58,6 +66,37 @@ h3 {
     text-align: center; 
 }
 
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    color: $green;
+    text-transform: uppercase;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+h5 {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-size: 1.125rem;
+    color: rgba(15, 121, 15, 0.60);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+
+
+hr {
+    border: 1px solid $green;
+    margin: 1rem 0;
+
+}
 
 
 
